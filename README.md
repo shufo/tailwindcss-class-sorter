@@ -62,6 +62,8 @@ $ yarn run test
 $ yarn run benchmark
 ```
 
+![image](https://user-images.githubusercontent.com/1641039/155764304-fd676354-1b29-4390-b035-96dc9aae051d.png)
+
 ## Contributing
 
 1.  Fork it
