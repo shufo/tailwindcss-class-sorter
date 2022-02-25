@@ -16,9 +16,10 @@ $ yarn add @shufo/tailwindcss-class-sorter
 ## Usage
 
 ```typescript
-const { sortClasses } = require('@shufo/tailwindcss-class-sorter')
+const { sortClasses } = require("@shufo/tailwindcss-class-sorter");
+
 console.log(sortClasses("pt-2 p-4"));
-# => "p-4 pt-2"
+// => "p-4 pt-2"
 ```
 
 `tailwindcss-class-sorter` will automatically look for `tailwind.config.js` in the project directory.
