@@ -1,10 +1,7 @@
 import type { Config } from "@jest/types";
 
-const appRoot = require("app-root-path");
-
 const config: Config.InitialOptions = {
   globals: {
-    __basedir: appRoot.toString(),
     "ts-jest": {
       tsconfig: "./tsconfig.json",
     },
