@@ -4,3 +4,4 @@ yarn-error.log
 /types
 /dist
 coverage
+benchmark/results
