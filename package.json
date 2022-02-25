@@ -24,6 +24,7 @@
     "@types/tailwindcss": "^3.0.9",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
+    "benny": "^3.7.1",
     "cross-env": "^7.0.3",
     "esbuild": "^0.14.23",
     "esbuild-node-externals": "^1.4.1",
