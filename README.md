@@ -56,6 +56,12 @@ $ yarn install
 $ yarn run test
 ```
 
+## Benchmarking
+
+```bash
+$ yarn run benchmark
+```
+
 ## Contributing
 
 1.  Fork it
