@@ -49,6 +49,13 @@ export interface IOption {
 | tailwindConfigPath | A path to tailwind config file            |
 | tailwindConfig     | A configuration object of tailwind config |
 
+## Testing
+
+```bash
+$ yarn install
+$ yarn run test
+```
+
 ## Contributing
 
 1.  Fork it
@@ -56,13 +63,6 @@ export interface IOption {
 3.  Commit your changes (`git commit -am 'Add some feature'`)
 4.  Push to the branch (`git push origin my-new-feature`)
 5.  Create new Pull Request
-
-## Testing
-
-```bash
-$ yarn install
-$ yarn run test
-```
 
 ## LICENSE
 
