@@ -14,7 +14,8 @@
     "format": "yarn run format:ts",
     "format:ts": "prettier {src,__tests__}/**/*.{ts,json} -w",
     "format:check": "prettier {src,__tests__}/**/*.{ts,json} -c",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "benchmark": "yarn run build && node benchmark/run.js"
   },
   "author": "Shuhei Hayashibara",
   "license": "MIT",
