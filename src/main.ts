@@ -4,23 +4,15 @@ import resolveConfig from "tailwindcss/resolveConfig";
 import type { TailwindConfig } from "tailwindcss/tailwind-config";
 import escalade from "escalade/sync";
 import { IOption } from "./options";
+import objectHash from 'object-hash'
 
 let tailwindConfig: TailwindConfig = {
     theme: {},
 };
 
+const contextMap = new Map();
+
 const __defaultConfig__ = "tailwind.config.js";
-
-const tailwindConfigPath = escalade(__dirname, (dir, names) => {
-    if (names.includes(__defaultConfig__)) {
-        return __defaultConfig__;
-    }
-});
-
-tailwindConfig.content = ["no-op"];
-if (tailwindConfigPath) {
-    tailwindConfig = require(tailwindConfigPath);
-}
 
 function bigSign(bigIntValue: number) {
     const left: any = bigIntValue > 0n;
@@ -29,6 +21,17 @@ function bigSign(bigIntValue: number) {
 }
 
 export function sortClasses(classStr: string, options: IOption = {}): string {
+    const tailwindConfigPath = escalade(__dirname, (dir, names) => {
+        if (names.includes(__defaultConfig__)) {
+            return __defaultConfig__;
+        }
+    });
+
+    tailwindConfig.content = ["no-op"];
+    if (tailwindConfigPath) {
+        tailwindConfig = require(tailwindConfigPath);
+    }
+
     if (options.tailwindConfig && options.tailwindConfigPath) {
         throw new Error(
             "You can not specify tailwinfConfig or tailwinfConfigPath. Please specify either one."
@@ -43,7 +46,16 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         tailwindConfig = options.tailwindConfig;
     }
 
-    const context = createContext(resolveConfig(tailwindConfig));
+    let context;
+    const existing = contextMap.get(tailwindConfigPath);
+    const hash = objectHash(tailwindConfig)
+
+    if (existing && existing.hash === hash) {
+        context = existing.context
+    } else {
+        context = createContext(resolveConfig(tailwindConfig))
+        contextMap.set(tailwindConfigPath, { context, hash })
+    }
 
     const parts: string[] = classStr
         .split(/\s+/)
