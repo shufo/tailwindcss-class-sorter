@@ -18,7 +18,8 @@ $ yarn add @shufo/tailwindcss-class-sorter
 ```typescript
 const { sortClasses } = require("@shufo/tailwindcss-class-sorter");
 
-console.log(sortClasses("pt-2 p-4"));
+const sorted = sortClasses("pt-2 p-4");
+console.log(sorted);
 // => "p-4 pt-2"
 ```
 
