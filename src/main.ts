@@ -4,7 +4,7 @@ import resolveConfig from "tailwindcss/resolveConfig";
 import type { TailwindConfig } from "tailwindcss/tailwind-config";
 import escalade from "escalade/sync";
 import { IOption } from "./options";
-import objectHash from 'object-hash'
+import objectHash from "object-hash";
 
 let tailwindConfig: TailwindConfig = {
     theme: {},
@@ -48,13 +48,13 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
 
     let context;
     const existing = contextMap.get(tailwindConfigPath);
-    const hash = objectHash(tailwindConfig)
+    const hash = objectHash(tailwindConfig);
 
     if (existing && existing.hash === hash) {
-        context = existing.context
+        context = existing.context;
     } else {
-        context = createContext(resolveConfig(tailwindConfig))
-        contextMap.set(tailwindConfigPath, { context, hash })
+        context = createContext(resolveConfig(tailwindConfig));
+        contextMap.set(tailwindConfigPath, { context, hash });
     }
 
     const parts: string[] = classStr
