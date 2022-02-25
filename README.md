@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/tailwindcss-class-sorter.svg)](https://badge.fury.io/js/tailwindcss-class-sorter)
+![npm](https://img.shields.io/npm/v/@shufo/tailwindcss-class-sorter)
 [![CI](https://github.com/shufo/tailwindcss-class-sorter/actions/workflows/test.yml/badge.svg)](https://github.com/shufo/tailwindcss-class-sorter/actions/workflows/test.yml)
 
 # tailwindcss-class-sorter
