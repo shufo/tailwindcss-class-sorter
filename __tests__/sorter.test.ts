@@ -29,7 +29,10 @@ describe("sorter test", () => {
 });
 
 describe("config test", () => {
-    const fixturesDir = path.resolve(__dirname, "fixtures/withConfigFile/basic");
+    const fixturesDir = path.resolve(
+        __dirname,
+        "fixtures/withConfigFile/basic"
+    );
     const fixtureDirEntries = fs.readdirSync(fixturesDir, {
         withFileTypes: true,
     });
