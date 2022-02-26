@@ -65,10 +65,17 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     const knownClassNamesWithOrder: (string | number)[][] = [];
 
     for (const className of parts) {
-        const order: number =
-            generateRules(new Set([className]), context).sort(([a], [z]) =>
-                bigSign(z - a)
-            )[0]?.[0] ?? null;
+        let order: number | null;
+
+        const ruleOrder = generateRules(new Set([className]), context).sort(
+            ([a], [z]) => bigSign(z - a)
+        )[0];
+
+        if (ruleOrder) {
+            order = ruleOrder[0];
+        } else {
+            order = null;
+        }
 
         if (order) {
             knownClassNamesWithOrder.push([className, order]);
