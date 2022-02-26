@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.3](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.2...v1.0.3) (2022-02-26)
+
+
+### Fixes
+
+* 🐛 avoid optionial chain syntax to support node 12.x ([cba197b](https://www.github.com/shufo/tailwindcss-class-sorter/commit/cba197be923159e55ad9a3cca978d3c93363f0de))
+
+
+### Miscellaneous
+
+* 🤖 support node12.x for backward compatibility ([2603089](https://www.github.com/shufo/tailwindcss-class-sorter/commit/2603089ec7a1262330eb98c19308a4e5a6642352))
+
 ### [1.0.2](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.1...v1.0.2) (2022-02-25)
 
 
