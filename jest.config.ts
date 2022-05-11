@@ -21,6 +21,7 @@ const config: Config.InitialOptions = {
   cache: false,
   testEnvironment: "node",
   setupFiles: ["<rootDir>/jest.setup.ts"],
+  collectCoverage: true,
 };
 
 export default config;
