@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.0.4](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.3...v1.0.4) (2022-05-11)
+
+
+### Miscellaneous
+
+* 🤖 (deps-dev) add codecov ([c57d40d](https://www.github.com/shufo/tailwindcss-class-sorter/commit/c57d40d966d358b26043b0a0c0fa94e359be2f8a))
+* **deps:** bump tailwindcss from 3.0.23 to 3.0.24 ([218ffbb](https://www.github.com/shufo/tailwindcss-class-sorter/commit/218ffbbcd876c2549906c0af73c82e6457df18b4))
+
 ### [1.0.3](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.2...v1.0.3) (2022-02-26)
 
 

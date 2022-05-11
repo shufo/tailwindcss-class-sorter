@@ -1,6 +1,6 @@
 {
   "name": "@shufo/tailwindcss-class-sorter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tailwindcss class sorter that respects tailwind config file",
   "main": "dist/main.js",
   "types": "./dist/types/main.d.ts",
