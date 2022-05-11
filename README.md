@@ -1,5 +1,6 @@
 [![npm](https://img.shields.io/npm/v/@shufo/tailwindcss-class-sorter)](https://www.npmjs.com/package/@shufo/tailwindcss-class-sorter)
 [![CI](https://github.com/shufo/tailwindcss-class-sorter/actions/workflows/test.yml/badge.svg)](https://github.com/shufo/tailwindcss-class-sorter/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/shufo/tailwindcss-class-sorter/branch/main/graph/badge.svg?token=CuqqimnEC4)](https://codecov.io/gh/shufo/tailwindcss-class-sorter)
 
 # tailwindcss-class-sorter
 
