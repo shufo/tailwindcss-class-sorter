@@ -1,12 +1,13 @@
 import { createContext } from "tailwindcss/lib/lib/setupContextUtils";
 import { generateRules } from "tailwindcss/lib/lib/generateRules";
 import resolveConfig from "tailwindcss/resolveConfig";
-import type { TailwindConfig } from "tailwindcss/tailwind-config";
+import type { Config } from "tailwindcss/types/config";
 import escalade from "escalade/sync";
 import { IOption } from "./options";
 import objectHash from "object-hash";
 
-let tailwindConfig: TailwindConfig = {
+let tailwindConfig: Config = {
+    content: [],
     theme: {},
 };
 

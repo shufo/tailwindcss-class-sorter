@@ -1,6 +1,6 @@
-import type { TailwindConfig } from "tailwindcss/tailwind-config";
+import type { Config } from "tailwindcss/types/config";
 
 export interface IOption {
     tailwindConfigPath?: string;
-    tailwindConfig?: TailwindConfig;
+    tailwindConfig?: Config;
 }
