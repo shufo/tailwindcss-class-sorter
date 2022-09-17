@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.0.5](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.4...v1.0.5) (2022-09-17)
+
+
+### Miscellaneous
+
+* **deps:** add renovate.json ([153c992](https://www.github.com/shufo/tailwindcss-class-sorter/commit/153c9926362d1308deb747ec8ade4c605fa00601))
+* **deps:** update actions/setup-node action to v3 ([7e253d9](https://www.github.com/shufo/tailwindcss-class-sorter/commit/7e253d9fc28bb9a28d47ed1b6ec63556883e985b))
+* **deps:** update akhilmhdh/contributors-readme-action action to v2.3.6 ([e6f24ef](https://www.github.com/shufo/tailwindcss-class-sorter/commit/e6f24ef7564e11636b06671950872f5c81bb88d7))
+* **deps:** update dependency @tailwindcss/typography to v0.5.7 ([c4b8ee0](https://www.github.com/shufo/tailwindcss-class-sorter/commit/c4b8ee016f39d9b8f912841538df5be12fd8cbb2))
+* **deps:** update dependency @types/tailwindcss to v3.0.11 ([363be77](https://www.github.com/shufo/tailwindcss-class-sorter/commit/363be7725124a1f90e4a3bbba8ae4cc4b7f638aa))
+* **deps:** update dependency prettier-plugin-tailwindcss to v0.1.13 ([9746058](https://www.github.com/shufo/tailwindcss-class-sorter/commit/9746058ca6b36bca4abe58bacbae1527cc1ce25c))
+
 ### [1.0.4](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.3...v1.0.4) (2022-05-11)
 
 
