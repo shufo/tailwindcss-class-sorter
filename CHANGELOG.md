@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.6](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.5...v1.0.6) (2022-09-17)
+
+
+### Fixes
+
+* 🐛 import type from tailwindcss/defaultConfig ([e27375f](https://github.com/shufo/tailwindcss-class-sorter/commit/e27375fe8b8bf3d2a94987791fdebae738a86f8e))
+
+
+### Miscellaneous
+
+* 💡 improve message for config not found error ([c66b6fc](https://github.com/shufo/tailwindcss-class-sorter/commit/c66b6fc3fdd125fa0679f187ecac8d2e9f528c08))
+* 🤖 add refactor type to change log types ([9683647](https://github.com/shufo/tailwindcss-class-sorter/commit/96836474b88e7454cb7927eef8b13fa871fe1179))
+* 🤖 disable pinning ([4e59016](https://github.com/shufo/tailwindcss-class-sorter/commit/4e5901680121629893715c0c6029093801ce7b5c))
+* 🤖 revert @types/tailwindcss to 3.0.9 ([72f1dc4](https://github.com/shufo/tailwindcss-class-sorter/commit/72f1dc454129bf347e344a2a113f3cbbdf7cb588))
+* 🤖 update renovate.json config ([b4ae20d](https://github.com/shufo/tailwindcss-class-sorter/commit/b4ae20db17ba8ac41de1fd01bc173020cf7457e7))
+
 ## [1.0.5](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.4...v1.0.5) (2022-09-17)
 
 
