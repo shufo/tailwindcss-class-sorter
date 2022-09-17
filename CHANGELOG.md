@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.0.5](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.4...v1.0.5) (2022-09-17)
+
+
+### Miscellaneous
+
+* **deps:** add renovate.json ([153c992](https://github.com/shufo/tailwindcss-class-sorter/commit/153c9926362d1308deb747ec8ade4c605fa00601))
+* **deps:** update actions/cache action to v3 ([05a1992](https://github.com/shufo/tailwindcss-class-sorter/commit/05a19928451aca5b73edad77f0c9ad943334f980))
+* **deps:** update actions/checkout action to v3 ([91b816f](https://github.com/shufo/tailwindcss-class-sorter/commit/91b816f060418f3c7448aff5766748200684770a))
+* **deps:** update actions/setup-node action to v3 ([7e253d9](https://github.com/shufo/tailwindcss-class-sorter/commit/7e253d9fc28bb9a28d47ed1b6ec63556883e985b))
+* **deps:** update akhilmhdh/contributors-readme-action action to v2.3.6 ([e6f24ef](https://github.com/shufo/tailwindcss-class-sorter/commit/e6f24ef7564e11636b06671950872f5c81bb88d7))
+* **deps:** update codecov/codecov-action action to v3 ([50014a0](https://github.com/shufo/tailwindcss-class-sorter/commit/50014a0612771e8924f36015e87678722f6c3cbd))
+* **deps:** update dependency @tailwindcss/typography to v0.5.7 ([c4b8ee0](https://github.com/shufo/tailwindcss-class-sorter/commit/c4b8ee016f39d9b8f912841538df5be12fd8cbb2))
+* **deps:** update dependency @types/tailwindcss to v3.0.11 ([363be77](https://github.com/shufo/tailwindcss-class-sorter/commit/363be7725124a1f90e4a3bbba8ae4cc4b7f638aa))
+* **deps:** update dependency esbuild to v0.15.7 ([407456b](https://github.com/shufo/tailwindcss-class-sorter/commit/407456b446ac8c8ec28882824b8cf0f29c19853e))
+* **deps:** update dependency eslint to v8.23.1 ([bab24ac](https://github.com/shufo/tailwindcss-class-sorter/commit/bab24ac68df05cc572b277a253829d4dce1a9ad2))
+* **deps:** update dependency prettier to v2.7.1 ([0a45d44](https://github.com/shufo/tailwindcss-class-sorter/commit/0a45d44b4a28630f5c1bab8b5da46a1f86fc5437))
+* **deps:** update dependency prettier-plugin-tailwindcss to v0.1.13 ([9746058](https://github.com/shufo/tailwindcss-class-sorter/commit/9746058ca6b36bca4abe58bacbae1527cc1ce25c))
+* **deps:** update googlecloudplatform/release-please-action action to v3 ([d119584](https://github.com/shufo/tailwindcss-class-sorter/commit/d1195849e2ce5ceee957521645c9d62c79e1796a))
+* **deps:** update pozil/auto-assign-issue action to v1.10.0 ([a4b223f](https://github.com/shufo/tailwindcss-class-sorter/commit/a4b223ff947bc308c0cbbc7b8fab1e4d17acffe4))
+
 ### [1.0.4](https://www.github.com/shufo/tailwindcss-class-sorter/compare/v1.0.3...v1.0.4) (2022-05-11)
 
 
