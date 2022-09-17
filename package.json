@@ -22,7 +22,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.7",
     "@types/jest": "^27.4.1",
-    "@types/tailwindcss": "^3.0.11",
+    "@types/tailwindcss": "3.0.9",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "benny": "^3.7.1",
