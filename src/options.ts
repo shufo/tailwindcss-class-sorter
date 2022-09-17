@@ -1,4 +1,4 @@
-import type { TailwindConfig } from "tailwindcss/tailwind-config";
+import type { TailwindConfig } from "tailwindcss/defaultConfig";
 
 export interface IOption {
     tailwindConfigPath?: string;
