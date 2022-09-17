@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.7](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.6...v1.0.7) (2022-09-17)
+
+
+### Fixes
+
+* 🐛 import config type from tailwindcss ([2858a4a](https://github.com/shufo/tailwindcss-class-sorter/commit/2858a4a71441d5b999ab83f32925a275c7699393))
+
+
+### Miscellaneous
+
+* 🤖 bump tailwindcss to 3.1.8 ([521f91e](https://github.com/shufo/tailwindcss-class-sorter/commit/521f91ebf033263712359db3b539f4d14b974282))
+* 🤖 delete @types/tailwindcss from dependencies ([192473f](https://github.com/shufo/tailwindcss-class-sorter/commit/192473f2a0cbfbed6224b138143d6372670cc94b))
+
 ## [1.0.6](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.5...v1.0.6) (2022-09-17)
 
 
