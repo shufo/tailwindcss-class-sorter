@@ -39,7 +39,7 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     }
 
     if (options.tailwindConfigPath) {
-        tailwindConfig = require(options.tailwindConfigPath);
+        tailwindConfig = requireConfig(options.tailwindConfigPath);
     }
 
     if (options.tailwindConfig) {
@@ -89,4 +89,16 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         .map(([className]) => className);
 
     return [...unknownClassNames, ...knownClassNames].join(" ");
+}
+
+function requireConfig(path: string) {
+    try {
+        return require(path);
+    } catch (err: any) {
+        if (err.code === "MODULE_NOT_FOUND") {
+            throw new Error("tailwind config could not be found at: " + path);
+        }
+
+        throw err;
+    }
 }

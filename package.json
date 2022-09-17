@@ -9,7 +9,7 @@
     "watch": "node esbuild.ts",
     "test": "yarn build && node --experimental-vm-modules ./node_modules/.bin/jest",
     "lint": "eslint . --ext .ts",
-    "fix": "eslint . --ext .ts --fix",
+    "fix": "eslint . --ext .ts --fix && yarn run format",
     "prepublish": "tsc src/main.ts --declaration --emitDeclarationOnly --outDir ./dist/types || true",
     "format": "yarn run format:ts",
     "format:ts": "prettier {src,__tests__}/**/*.{ts,json} -w",

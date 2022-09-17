@@ -64,6 +64,18 @@ describe("config test", () => {
 });
 
 describe("config option test", () => {
+    test("it should throws an error if file specified by config path does not exists", () => {
+        const configPath = path.resolve(
+            __dirname,
+            "fixtures/withConfigFile/basic/tailwind.config.not.exists.js"
+        );
+        expect(() => {
+            sortClasses("foo", {
+                tailwindConfigPath: configPath,
+            });
+        }).toThrowError("tailwind config could not be found");
+    });
+
     test("it should throw error if both config path and config object specified", () => {
         const configPath = path.resolve(
             __dirname,
