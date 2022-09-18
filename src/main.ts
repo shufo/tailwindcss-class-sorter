@@ -5,6 +5,7 @@ import type { Config } from "tailwindcss/types/config";
 import escalade from "escalade/sync";
 import { IOption } from "./options";
 import objectHash from "object-hash";
+import path from "path";
 
 let tailwindConfig: Config = {
     content: [],
@@ -92,11 +93,15 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     return [...unknownClassNames, ...knownClassNames].join(" ");
 }
 
-function requireConfig(path: string) {
+function requireConfig(configPath: string) {
     try {
-        return require(path);
+        return require(configPath);
     } catch (err: any) {
-        if (err.code === "MODULE_NOT_FOUND") {
+        console.log(err);
+        if (
+            err.code === "MODULE_NOT_FOUND" &&
+            err.moduleName === path.resolve(configPath)
+        ) {
             throw new Error("tailwind config could not be found at: " + path);
         }
 

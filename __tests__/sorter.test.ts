@@ -76,6 +76,18 @@ describe("config option test", () => {
         }).toThrowError("tailwind config could not be found");
     });
 
+    test("it should throws an error if config requires unresolvable module", () => {
+        const configPath = path.resolve(
+            __dirname,
+            "fixtures/withConfigFile/basic/tailwind.config.unresolvable.js"
+        );
+        expect(() => {
+            sortClasses("foo", {
+                tailwindConfigPath: configPath,
+            });
+        }).toThrowError("Cannot find module '@tailwindcss/typo'");
+    });
+
     test("it should throw error if both config path and config object specified", () => {
         const configPath = path.resolve(
             __dirname,
