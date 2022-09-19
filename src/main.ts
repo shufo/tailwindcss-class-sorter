@@ -100,7 +100,6 @@ function requireConfig(configPath: string) {
     try {
         return require(configPath);
     } catch (err: any) {
-        console.log(err);
         if (
             err.code === "MODULE_NOT_FOUND" &&
             err.moduleName === path.resolve(configPath)
