@@ -54,9 +54,12 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
 
     if (existing && existing.hash === hash) {
         context = existing.context;
-    } else {
+    } else if (options.tailwindConfigPath) {
         context = createContext(resolveConfig(tailwindConfig));
         contextMap.set(tailwindConfigPath, { context, hash });
+    } else {
+        // create context from tailwind config on the fly
+        context = createContext(resolveConfig(tailwindConfig));
     }
 
     const parts: string[] = classStr

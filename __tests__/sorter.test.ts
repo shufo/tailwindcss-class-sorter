@@ -100,4 +100,56 @@ describe("config option test", () => {
             });
         }).toThrowError();
     });
+
+    test("do not cache context when `tailwindConfig` option specified", () => {
+        const firstConfig = {
+            content: [],
+            theme: {
+                screens: {
+                    sm: "0",
+                    md: "834px",
+                    lg: "1024px",
+                    xl: "1200px",
+                    xxl: "1440px",
+                    xxxl: "1900px",
+                },
+            },
+        };
+        const firstResult = sortClasses(
+            "md:col-end-12 xl:col-end-10 col-start-2 col-end-11 xxxl:col-end-8",
+            {
+                tailwindConfig: firstConfig,
+            }
+        );
+        const firstExpected =
+            "col-start-2 col-end-11 md:col-end-12 xl:col-end-10 xxxl:col-end-8";
+
+        expect(firstResult).toEqual(firstExpected);
+
+        // change config
+        const secondConfig = {
+            content: [],
+            theme: {
+                screens: {
+                    sm: "0",
+                    md: "834px",
+                    lg: "1024px",
+                    xl: "1200px",
+                    xxl: "1440px",
+                },
+            },
+        };
+
+        // changed config taking effect
+        const secondResult = sortClasses(
+            "md:col-end-12 xl:col-end-10 col-start-2 col-end-11 xxxl:col-end-8",
+            {
+                tailwindConfig: secondConfig,
+            }
+        );
+        const secondExpected =
+            "xxxl:col-end-8 col-start-2 col-end-11 md:col-end-12 xl:col-end-10";
+
+        expect(secondResult).toEqual(secondExpected);
+    });
 });
