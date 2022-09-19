@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.8](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.7...v1.0.8) (2022-09-18)
+
+
+### Miscellaneous
+
+* 💡 improve error message for config file ([0f3de1d](https://github.com/shufo/tailwindcss-class-sorter/commit/0f3de1dbf77214730cf9febdfc022f0f8430f81a))
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([6295e69](https://github.com/shufo/tailwindcss-class-sorter/commit/6295e694e870b7c525048559a81a4452a9aa1023))
+
 ## [1.0.7](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.6...v1.0.7) (2022-09-17)
 
 
