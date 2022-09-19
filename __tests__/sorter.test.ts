@@ -159,7 +159,7 @@ describe("config option test", () => {
 
         for (let i = 0; i < 20; i++) {
             const sorted = sortClasses(
-                "xxxl:col-end-10 xxxl:col-end-8 col-start-2 col-end-11 md:col-end-12",
+                "xxl:col-end-10 xxxl:col-end-8 col-start-2 col-end-11 md:col-end-12",
                 {
                     tailwindConfig: {
                         content: [],
@@ -176,6 +176,10 @@ describe("config option test", () => {
                     },
                 }
             );
+            const expected =
+                "col-start-2 col-end-11 md:col-end-12 xxl:col-end-10 xxxl:col-end-8";
+
+            expect(sorted).toEqual(expected);
         }
 
         const endTime = performance.now();
