@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.9](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.8...v1.0.9) (2022-09-19)
+
+
+### Fixes
+
+* 🐛 `tailwindConfig` caches context unexpectedly ([ffd98c9](https://github.com/shufo/tailwindcss-class-sorter/commit/ffd98c94328bd74120e12a74a8a82c4197d907e8))
+
+
+### Miscellaneous
+
+* 💡 delete unnecessary console.log ([9cb1aeb](https://github.com/shufo/tailwindcss-class-sorter/commit/9cb1aeb9bf3ccc316c14f426421bb4f2d3265ce7))
+
 ## [1.0.8](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.7...v1.0.8) (2022-09-18)
 
 
