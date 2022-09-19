@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.10](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.9...v1.0.10) (2022-09-19)
+
+
+### Fixes
+
+* 🐛 slow performance with uncached tailwind config object ([6dd6f61](https://github.com/shufo/tailwindcss-class-sorter/commit/6dd6f6113816c7fbfd8474a56087ddd5ccc6ea88))
+
 ## [1.0.9](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.8...v1.0.9) (2022-09-19)
 
 
