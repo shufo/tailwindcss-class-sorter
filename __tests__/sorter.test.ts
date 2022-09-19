@@ -1,5 +1,6 @@
 import path from "path";
 import fs from "fs";
+import { performance } from "perf_hooks";
 import { sortClasses } from "../src/main";
 import util from "./support/util";
 
@@ -151,5 +152,33 @@ describe("config option test", () => {
             "xxxl:col-end-8 col-start-2 col-end-11 md:col-end-12 xl:col-end-10";
 
         expect(secondResult).toEqual(secondExpected);
+    });
+
+    test("cache tailwind config object if object is the same", () => {
+        const startTime = performance.now();
+
+        for (let i = 0; i < 20; i++) {
+            const sorted = sortClasses(
+                "xxxl:col-end-10 xxxl:col-end-8 col-start-2 col-end-11 md:col-end-12",
+                {
+                    tailwindConfig: {
+                        content: [],
+                        theme: {
+                            screens: {
+                                sm: "0",
+                                md: "834px",
+                                lg: "1024px",
+                                xl: "1200px",
+                                xxl: "1440px",
+                                xxxl: "1900px",
+                            },
+                        },
+                    },
+                }
+            );
+        }
+
+        const endTime = performance.now();
+        expect(endTime - startTime).toBeLessThan(1000);
     });
 });

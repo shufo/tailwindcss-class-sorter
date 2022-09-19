@@ -48,9 +48,18 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         tailwindConfig = options.tailwindConfig;
     }
 
-    let context;
-    const existing = contextMap.get(tailwindConfigPath);
     const hash = objectHash(tailwindConfig);
+
+    let context;
+    let existing;
+
+    if (options.tailwindConfigPath) {
+        existing = contextMap.get(tailwindConfigPath);
+    }
+
+    if (options.tailwindConfig) {
+        existing = contextMap.get(hash);
+    }
 
     if (existing && existing.hash === hash) {
         context = existing.context;
@@ -60,6 +69,7 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     } else {
         // create context from tailwind config on the fly
         context = createContext(resolveConfig(tailwindConfig));
+        contextMap.set(hash, { context, hash });
     }
 
     const parts: string[] = classStr
