@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.11](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.10...v1.0.11) (2022-09-20)
+
+
+### Fixes
+
+* 🐛 uncached default sorting is affecting performance ([e8d2fd4](https://github.com/shufo/tailwindcss-class-sorter/commit/e8d2fd42b681fdbc9ce0b110e8faeb4195eb01ae))
+
 ## [1.0.10](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.9...v1.0.10) (2022-09-19)
 
 
