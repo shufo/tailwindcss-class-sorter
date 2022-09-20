@@ -61,6 +61,10 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         existing = contextMap.get(hash);
     }
 
+    if (!options.tailwindConfig && !options.tailwindConfigPath) {
+        existing = contextMap.get(hash);
+    }
+
     if (existing && existing.hash === hash) {
         context = existing.context;
     } else if (options.tailwindConfigPath) {
