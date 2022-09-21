@@ -48,30 +48,15 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         tailwindConfig = options.tailwindConfig;
     }
 
-    const hash = objectHash(tailwindConfig);
+    const hash = objectHash(tailwindConfig, { ignoreUnknown: true });
 
     let context;
-    let existing;
 
-    if (options.tailwindConfigPath) {
-        existing = contextMap.get(tailwindConfigPath);
-    }
-
-    if (options.tailwindConfig) {
-        existing = contextMap.get(hash);
-    }
-
-    if (!options.tailwindConfig && !options.tailwindConfigPath) {
-        existing = contextMap.get(hash);
-    }
+    const existing = contextMap.get(hash);
 
     if (existing && existing.hash === hash) {
         context = existing.context;
-    } else if (options.tailwindConfigPath) {
-        context = createContext(resolveConfig(tailwindConfig));
-        contextMap.set(tailwindConfigPath, { context, hash });
     } else {
-        // create context from tailwind config on the fly
         context = createContext(resolveConfig(tailwindConfig));
         contextMap.set(hash, { context, hash });
     }
