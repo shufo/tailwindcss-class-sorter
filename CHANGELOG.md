@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.12](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.11...v1.0.12) (2022-09-21)
+
+
+### Fixes
+
+* 🐛 create context based on config hash ([a1c5084](https://github.com/shufo/tailwindcss-class-sorter/commit/a1c50844e1938b491eec5ed19fff9e8d3a072bba))
+
 ## [1.0.11](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.10...v1.0.11) (2022-09-20)
 
 
