@@ -22,6 +22,35 @@ function bigSign(bigIntValue: number) {
     return left - right;
 }
 
+function prefixCandidate(context, selector) {
+    const prefix = context.tailwindConfig.prefix;
+    return typeof prefix === "function" ? prefix(selector) : prefix + selector;
+}
+
+function getClassOrderPolyfill(classes, context) {
+    const parasiteUtilities = new Set([
+        prefixCandidate(context, "group"),
+        prefixCandidate(context, "peer"),
+    ]);
+
+    const classNamesWithOrder: Array<Array<string>> = [];
+
+    for (const className of classes) {
+        let order =
+            generateRules(new Set([className]), context).sort(([a], [z]) =>
+                bigSign(z - a)
+            )[0]?.[0] ?? null;
+
+        if (order === null && parasiteUtilities.has(className)) {
+            order = context.layerOrder.components;
+        }
+
+        classNamesWithOrder.push([className, order]);
+    }
+
+    return classNamesWithOrder;
+}
+
 export function sortClasses(classStr: string, options: IOption = {}): string {
     const tailwindConfigPath = escalade(__dirname, (dir, names) => {
         if (names.includes(__defaultConfig__)) {
@@ -58,6 +87,7 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         context = existing.context;
     } else {
         context = createContext(resolveConfig(tailwindConfig));
+        // console.log(context.getClassOrder);
         contextMap.set(hash, { context, hash });
     }
 
@@ -66,30 +96,17 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         .filter((x) => x !== "" && x !== "|");
 
     const unknownClassNames: string[] = [];
-    const knownClassNamesWithOrder: (string | number)[][] = [];
-
-    for (const className of parts) {
-        let order: number | null;
-
-        const ruleOrder = generateRules(new Set([className]), context).sort(
-            ([a], [z]) => bigSign(z - a)
-        )[0];
-
-        if (ruleOrder) {
-            order = ruleOrder[0];
-        } else {
-            order = null;
-        }
-
-        if (order) {
-            knownClassNamesWithOrder.push([className, order]);
-        } else {
-            unknownClassNames.push(className);
-        }
-    }
+    const knownClassNamesWithOrder = context.getClassOrder
+        ? context.getClassOrder(parts)
+        : getClassOrderPolyfill(parts, context);
 
     const knownClassNames = knownClassNamesWithOrder
-        .sort(([, a]: any, [, z]: any) => (a === z ? 0 : bigSign(a - z)))
+        .sort(([, a]: any, [, z]: any) => {
+            if (a === z) return 0;
+            if (a === null) return -1;
+            if (z === null) return 1;
+            return bigSign(a - z);
+        })
         .map(([className]) => className);
 
     return [...unknownClassNames, ...knownClassNames].join(" ");
