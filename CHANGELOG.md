@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.12...v2.0.0) (2023-01-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 drop support for node 12.x
+
+### Features
+
+* 🎸 support tailwind 3.2 ([8c08b53](https://github.com/shufo/tailwindcss-class-sorter/commit/8c08b53727a8ad32ca1bc7ff86b538107d24d27f))
+
+
+### Miscellaneous
+
+* 🤖 bump tailwindcss to 3.2.4 ([2080eaf](https://github.com/shufo/tailwindcss-class-sorter/commit/2080eaf78ca24f71f3cef6003248e036fd50fd08))
+* 🤖 drop support for node 12.x ([97b45ee](https://github.com/shufo/tailwindcss-class-sorter/commit/97b45ee21ee6021560bec7b278859bc90807e3fb))
+* **deps:** update pozil/auto-assign-issue action to v1.11.0 ([b156b17](https://github.com/shufo/tailwindcss-class-sorter/commit/b156b170d1a45c1f4bbbc42c7dcedcd48fbb5fd1))
+
 ## [1.0.12](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.11...v1.0.12) (2022-09-21)
 
 
