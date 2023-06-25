@@ -3,6 +3,10 @@ import fs from "fs";
 import { performance } from "perf_hooks";
 import { sortClasses } from "../src/main";
 import util from "./support/util";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe("sorter test", () => {
     const fixturesDir = path.resolve(__dirname, "fixtures");
@@ -86,7 +90,7 @@ describe("config option test", () => {
             sortClasses("foo", {
                 tailwindConfigPath: configPath,
             });
-        }).toThrowError("Cannot find module '@tailwindcss/typo'");
+        }).toThrowError("Cannot find package '@tailwindcss/typo'");
     });
 
     test("it should throw error if both config path and config object specified", () => {

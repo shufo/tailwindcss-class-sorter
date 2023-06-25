@@ -3,10 +3,11 @@
   "version": "2.0.0",
   "description": "A tailwindcss class sorter that respects tailwind config file",
   "main": "dist/main.js",
+  "type": "module",
   "types": "./dist/types/main.d.ts",
   "scripts": {
-    "build": "cross-env NODE_ENV=production node esbuild.ts",
-    "watch": "node esbuild.ts",
+    "build": "cross-env NODE_ENV=production node build/build.js && cross-env NODE_ENV=production ESM_BUILD=true node build/build.js",
+    "watch": "node build/build.js",
     "test": "yarn build && node --experimental-vm-modules ./node_modules/.bin/jest",
     "lint": "eslint . --ext .ts",
     "fix": "eslint . --ext .ts --fix && yarn run format",
@@ -65,5 +66,13 @@
   ],
   "engines": {
     "node": ">= 14.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/main.cjs",
+      "default": "./dist/main.js"
+    },
+    "./*": "./*"
   }
 }

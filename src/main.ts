@@ -1,16 +1,36 @@
-import { createContext } from "tailwindcss/lib/lib/setupContextUtils";
-import { generateRules } from "tailwindcss/lib/lib/generateRules";
-import resolveConfig from "tailwindcss/resolveConfig";
+import setupContextUtil from "tailwindcss/lib/lib/setupContextUtils.js";
+
+import generateRules from "tailwindcss/lib/lib/generateRules.js";
+
+import resolveConfig from "tailwindcss/resolveConfig.js";
+
 import type { Config } from "tailwindcss/types/config";
+
 import escalade from "escalade/sync";
+
 import { IOption } from "./options";
+
 import objectHash from "object-hash";
+
 import path from "path";
+
+import { createSyncFn } from "synckit";
+
+import fs from "fs";
+
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 let tailwindConfig: Config = {
     content: [],
+
     theme: {},
 };
+
+const syncRequire = createSyncFn(require.resolve("../src/require.js"));
 
 const contextMap = new Map();
 
@@ -18,18 +38,22 @@ const __defaultConfig__ = "tailwind.config.js";
 
 function bigSign(bigIntValue: number) {
     const left: any = bigIntValue > 0n;
+
     const right: any = bigIntValue < 0n;
+
     return left - right;
 }
 
 function prefixCandidate(context, selector) {
     const prefix = context.tailwindConfig.prefix;
+
     return typeof prefix === "function" ? prefix(selector) : prefix + selector;
 }
 
 function getClassOrderPolyfill(classes, context) {
     const parasiteUtilities = new Set([
         prefixCandidate(context, "group"),
+
         prefixCandidate(context, "peer"),
     ]);
 
@@ -59,8 +83,13 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     });
 
     tailwindConfig.content = ["no-op"];
+
     if (tailwindConfigPath) {
-        tailwindConfig = require(tailwindConfigPath);
+        // tailwindConfig = require(tailwindConfigPath);
+
+        // tailwindConfig = import(tailwindConfigPath);
+
+        tailwindConfig = requireConfig(tailwindConfigPath);
     }
 
     if (options.tailwindConfig && options.tailwindConfigPath) {
@@ -70,6 +99,8 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     }
 
     if (options.tailwindConfigPath) {
+        // tailwindConfig = import(options.tailwindConfigPath);
+
         tailwindConfig = requireConfig(options.tailwindConfigPath);
     }
 
@@ -86,41 +117,57 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     if (existing && existing.hash === hash) {
         context = existing.context;
     } else {
-        context = createContext(resolveConfig(tailwindConfig));
+        context = setupContextUtil.createContext(resolveConfig(tailwindConfig));
+
         // console.log(context.getClassOrder);
+
         contextMap.set(hash, { context, hash });
     }
 
     const parts: string[] = classStr
+
         .split(/\s+/)
+
         .filter((x) => x !== "" && x !== "|");
 
     const unknownClassNames: string[] = [];
+
     const knownClassNamesWithOrder = context.getClassOrder
         ? context.getClassOrder(parts)
         : getClassOrderPolyfill(parts, context);
 
     const knownClassNames = knownClassNamesWithOrder
+
         .sort(([, a]: any, [, z]: any) => {
             if (a === z) return 0;
+
             if (a === null) return -1;
+
             if (z === null) return 1;
+
             return bigSign(a - z);
         })
+
         .map(([className]) => className);
 
     return [...unknownClassNames, ...knownClassNames].join(" ");
 }
 
 function requireConfig(configPath: string) {
+    if (!fs.existsSync(configPath)) {
+        throw new Error("tailwind config could not be found at: " + path);
+    }
+
     try {
-        return require(configPath);
+        return syncRequire(configPath);
     } catch (err: any) {
         if (
             err.code === "MODULE_NOT_FOUND" &&
             err.moduleName === path.resolve(configPath)
         ) {
-            throw new Error("tailwind config could not be found at: " + path);
+            throw new Error(
+                "tailwind config could not be found at: " + configPath
+            );
         }
 
         throw err;

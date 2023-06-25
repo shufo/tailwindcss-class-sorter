@@ -2,6 +2,10 @@ import path from "path";
 import fs from "fs";
 import { sortClasses } from "../src/main";
 import util from "./support/util";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe("replace test", () => {
     const fixturesDir = path.resolve(__dirname, "fixtures/html");
