@@ -85,10 +85,6 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     tailwindConfig.content = ["no-op"];
 
     if (tailwindConfigPath) {
-        // tailwindConfig = require(tailwindConfigPath);
-
-        // tailwindConfig = import(tailwindConfigPath);
-
         tailwindConfig = requireConfig(tailwindConfigPath);
     }
 
@@ -99,8 +95,6 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
     }
 
     if (options.tailwindConfigPath) {
-        // tailwindConfig = import(options.tailwindConfigPath);
-
         tailwindConfig = requireConfig(options.tailwindConfigPath);
     }
 
@@ -118,8 +112,6 @@ export function sortClasses(classStr: string, options: IOption = {}): string {
         context = existing.context;
     } else {
         context = setupContextUtil.createContext(resolveConfig(tailwindConfig));
-
-        // console.log(context.getClassOrder);
 
         contextMap.set(hash, { context, hash });
     }
