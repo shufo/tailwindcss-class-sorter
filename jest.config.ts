@@ -4,6 +4,7 @@ const config: Config.InitialOptions = {
   globals: {
     "ts-jest": {
       tsconfig: "./tsconfig.json",
+      useESM: true,
     },
   },
   testMatch: ["**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)"],
@@ -14,8 +15,9 @@ const config: Config.InitialOptions = {
   },
   transformIgnorePatterns: ["node_modules/(?!variables/.*)"],
   moduleNameMapper: {
-    "^(\\.{1,2}/.*)\\.js$": "$1",
+    "src(.*)$": "<rootDir>/src/$1",
   },
+  extensionsToTreatAsEsm: [".ts"],
   testTimeout: 10000,
   verbose: true,
   cache: false,

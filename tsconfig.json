@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "target": "ES2020",
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
     "lib": ["esnext"],
     "baseUrl": "./",
     "declaration": true,
@@ -18,14 +18,20 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "esnext"
     }
   },
   "ts-jest": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "esnext"
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["src/**/*", "node_modules/@types", "__tests__/**/*"]
+  "exclude": ["node_modules", "dist"],
+  "include": [
+    "src/**/*",
+    "test/**/*.ts",
+    "node_modules/@types",
+    "__tests__/**/*",
+    "jest.config.js"
+  ]
 }

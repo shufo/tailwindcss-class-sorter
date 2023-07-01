@@ -1,7 +1,6 @@
-import * as typo from "@tailwindcss/typo";
-export default {
+module.exports = {
     content: ["./**/*.{html}"],
-    plugins: [typo],
+    plugins: [],
     theme: {
         colors: {
             blue: "#1fb6ff",
