@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.0](https://github.com/shufo/tailwindcss-class-sorter/compare/v2.0.0...v3.0.0) (2023-07-01)
+
+
+### Features
+
+* ESM support ([#54](https://github.com/shufo/tailwindcss-class-sorter/issues/54)) ([8e50fda](https://github.com/shufo/tailwindcss-class-sorter/commit/8e50fda3556465c90f4fc1770e2869e348850d26))
+
+
+### Miscellaneous
+
+* **deps:** update dependency @types/jest to v29 ([bb65dc9](https://github.com/shufo/tailwindcss-class-sorter/commit/bb65dc92c0a3f3bb4350bc8c9c95620ea77290e2))
+* **deps:** update dependency husky to v8 ([8d849c3](https://github.com/shufo/tailwindcss-class-sorter/commit/8d849c365275f4307e978aee82674bf229c1b876))
+* **deps:** update dependency lint-staged to v13 ([4dfa1c6](https://github.com/shufo/tailwindcss-class-sorter/commit/4dfa1c689ce19da173c90fbe5701bfa9b289ef66))
+* **deps:** update dependency typescript to v5 ([d7d2c69](https://github.com/shufo/tailwindcss-class-sorter/commit/d7d2c6966d602f7bfa09304705e56fbe6cac1385))
+* release 3.0.0 ([3d89927](https://github.com/shufo/tailwindcss-class-sorter/commit/3d89927b645ecd2bbc0705360a6aa8c83458034b))
+
 ## [2.0.0](https://github.com/shufo/tailwindcss-class-sorter/compare/v1.0.12...v2.0.0) (2023-01-20)
 
 
