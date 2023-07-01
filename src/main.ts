@@ -1,44 +1,29 @@
 import setupContextUtil from "tailwindcss/lib/lib/setupContextUtils.js";
-
 import generateRules from "tailwindcss/lib/lib/generateRules.js";
-
 import resolveConfig from "tailwindcss/resolveConfig.js";
-
 import type { Config } from "tailwindcss/types/config";
-
 import escalade from "escalade/sync";
-
 import { IOption } from "./options";
-
 import objectHash from "object-hash";
-
 import path from "path";
-
 import { createSyncFn } from "synckit";
-
 import fs from "fs";
-
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
-
 const __dirname = path.dirname(__filename);
 
 let tailwindConfig: Config = {
     content: [],
-
     theme: {},
 };
 
 const syncRequire = createSyncFn(require.resolve("../src/require.js"));
-
 const contextMap = new Map();
-
 const __defaultConfig__ = "tailwind.config.js";
 
 function bigSign(bigIntValue: number) {
     const left: any = bigIntValue > 0n;
-
     const right: any = bigIntValue < 0n;
 
     return left - right;
