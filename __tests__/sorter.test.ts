@@ -90,7 +90,9 @@ describe("config option test", () => {
             sortClasses("foo", {
                 tailwindConfigPath: configPath,
             });
-        }).toThrowError("Cannot find package '@tailwindcss/typo'");
+        }).toThrowError(
+            "Cannot find module '@tailwindcss/typo' from '__tests__/fixtures/withConfigFile/basic/tailwind.config.unresolvable.js'"
+        );
     });
 
     test("it should throw error if both config path and config object specified", () => {
