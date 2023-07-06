@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.1](https://github.com/shufo/tailwindcss-class-sorter/compare/v3.0.0...v3.0.1) (2023-07-06)
+
+
+### Fixes
+
+* 🐛 use loadConfig for module loading ([439bad9](https://github.com/shufo/tailwindcss-class-sorter/commit/439bad91c6f894334e7542755bb83f2f30e6cf53))
+
+
+### Miscellaneous
+
+* 🤖 remove synckit from dependencies ([33f7934](https://github.com/shufo/tailwindcss-class-sorter/commit/33f7934ea907637d80b5f24ac1151f628b56f681))
+
 ## [3.0.0](https://github.com/shufo/tailwindcss-class-sorter/compare/v2.0.0...v3.0.0) (2023-07-01)
 
 
