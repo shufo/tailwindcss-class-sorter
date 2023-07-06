@@ -1,12 +1,12 @@
 import setupContextUtil from "tailwindcss/lib/lib/setupContextUtils.js";
 import generateRules from "tailwindcss/lib/lib/generateRules.js";
 import resolveConfig from "tailwindcss/resolveConfig.js";
+import loadConfig from "tailwindcss/loadConfig.js";
 import type { Config } from "tailwindcss/types/config";
 import escalade from "escalade/sync";
 import { IOption } from "./options";
 import objectHash from "object-hash";
 import path from "path";
-import { createSyncFn } from "synckit";
 import fs from "fs";
 import { fileURLToPath } from "url";
 
@@ -18,7 +18,6 @@ let tailwindConfig: Config = {
     theme: {},
 };
 
-const syncRequire = createSyncFn(require.resolve("../src/require.js"));
 const contextMap = new Map();
 const __defaultConfig__ = "tailwind.config.js";
 
@@ -136,7 +135,7 @@ function requireConfig(configPath: string) {
     }
 
     try {
-        return syncRequire(configPath);
+        return loadConfig(configPath);
     } catch (err: any) {
         if (
             err.code === "MODULE_NOT_FOUND" &&

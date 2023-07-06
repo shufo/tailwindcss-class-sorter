@@ -20,7 +20,7 @@ esbuild
     target: "esnext",
     format: process.env.ESM_BUILD ? "esm" : "cjs",
     plugins: [nodeExternalsPlugin()],
-    external: ["prettier-plugin-tailwindcss", "./src/require.js"],
+    external: ["prettier-plugin-tailwindcss"],
     define: {
       "import.meta.url": "import_meta_url",
     },
