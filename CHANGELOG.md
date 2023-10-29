@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.2](https://github.com/shufo/tailwindcss-class-sorter/compare/v3.0.1...v3.0.2) (2023-10-29)
+
+
+### Miscellaneous
+
+* **deps:** update actions/setup-node action to v4 ([40d91db](https://github.com/shufo/tailwindcss-class-sorter/commit/40d91dbd9073d360b6da25bbabb3a0bfc95ef296))
+
 ## [3.0.1](https://github.com/shufo/tailwindcss-class-sorter/compare/v3.0.0...v3.0.1) (2023-07-06)
 
 
