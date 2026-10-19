@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.2](https://github.com/shufo/tailwindcss-class-sorter/compare/v3.0.1...v3.0.2) (2026-10-19)
+
+
+### Miscellaneous
+
+* 🤖 merge ([be901a7](https://github.com/shufo/tailwindcss-class-sorter/commit/be901a7bb706971eacdde374d07a36922e58ccf9))
+* bump escalade to 3.2.0 ([4ed036b](https://github.com/shufo/tailwindcss-class-sorter/commit/4ed036b1cbeb1697ba80224b731cb27f5aa484e6))
+* **deps:** bump tailwindcss from 3.3.2 to 3.3.3 ([052ab92](https://github.com/shufo/tailwindcss-class-sorter/commit/052ab921b69cc4c629b1024cf3dcc4613446f6cd))
+* **deps:** update actions/setup-node action to v4 ([40d91db](https://github.com/shufo/tailwindcss-class-sorter/commit/40d91dbd9073d360b6da25bbabb3a0bfc95ef296))
+* **deps:** update akhilmhdh/contributors-readme-action action to v2.3.11 ([123641d](https://github.com/shufo/tailwindcss-class-sorter/commit/123641dc890c50702a49482abe21b625d0d2fd51))
+
 ## [3.0.1](https://github.com/shufo/tailwindcss-class-sorter/compare/v3.0.0...v3.0.1) (2023-07-06)
 
 
