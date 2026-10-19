@@ -1,6 +1,6 @@
 {
   "name": "@shufo/tailwindcss-class-sorter",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "A tailwindcss class sorter that respects tailwind config file",
   "main": "dist/main.cjs",
   "type": "module",
