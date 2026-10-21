@@ -32,6 +32,18 @@ const sorted = sortClasses("pt-2 p-4");
 `tailwindcss-class-sorter` will automatically look for `tailwind.config.js` in the project directory.
 Then if it exists, it will sort according to the tailwindcss configuration. If it does not exist, the default sort order of tailwindcss plugin will be used.
 
+### Tailwind CSS v4
+
+Tailwind CSS v4 is configured with a CSS entry point instead of a JS config file. Pass it as `tailwindConfigPath`:
+
+```typescript
+const sorted = sortClasses("rg:flex p-4 xs:mt-2", {
+    tailwindConfigPath: "resources/css/app.css",
+});
+```
+
+Sorting is then delegated to the official sorter of [prettier-plugin-tailwindcss](https://github.com/tailwindlabs/prettier-plugin-tailwindcss) (`>= 0.8.0`), which must be installed in your project: `tailwindcss` and `prettier-plugin-tailwindcss` are both resolved from the stylesheet location. Duplicated classes are kept, like with Tailwind CSS v3.
+
 ## API
 
 ### functions
@@ -51,10 +63,10 @@ export interface IOption {
 }
 ```
 
-| key                | value                                     |
-| ------------------ | ----------------------------------------- |
-| tailwindConfigPath | A path to tailwind config file            |
-| tailwindConfig     | A configuration object of tailwind config |
+| key                | value                                                         |
+| ------------------ | ------------------------------------------------------------- |
+| tailwindConfigPath | A path to tailwind config file (v3) or CSS entry point (v4)   |
+| tailwindConfig     | A configuration object of tailwind config                     |
 
 ## Testing
 
