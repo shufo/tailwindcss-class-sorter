@@ -44,6 +44,7 @@
   "dependencies": {
     "escalade": "^3.2.0",
     "object-hash": "^3.0.0",
+    "synckit": "^0.12.3",
     "tailwindcss": "^3.3.2"
   },
   "files": [
@@ -74,5 +75,13 @@
       "default": "./dist/main.js"
     },
     "./*": "./*"
+  },
+  "peerDependencies": {
+    "prettier-plugin-tailwindcss": ">=0.8.0"
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
   }
 }
