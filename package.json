@@ -8,7 +8,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production node build/build.js && cross-env NODE_ENV=production ESM_BUILD=true node build/build.js",
     "watch": "node build/build.js",
-    "test": "yarn build && node --experimental-vm-modules ./node_modules/.bin/jest",
+    "test": "yarn build && yarn --cwd __tests__/fixtures/v4 install --frozen-lockfile && node --experimental-vm-modules ./node_modules/.bin/jest",
     "lint": "eslint . --ext .ts",
     "fix": "eslint . --ext .ts --fix && yarn run format",
     "prepublish": "tsc src/main.ts --declaration --emitDeclarationOnly --outDir ./dist/types || true",
@@ -44,6 +44,7 @@
   "dependencies": {
     "escalade": "^3.2.0",
     "object-hash": "^3.0.0",
+    "synckit": "^0.12.3",
     "tailwindcss": "^3.3.2"
   },
   "files": [
@@ -74,5 +75,13 @@
       "default": "./dist/main.js"
     },
     "./*": "./*"
+  },
+  "peerDependencies": {
+    "prettier-plugin-tailwindcss": ">=0.8.0"
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
   }
 }

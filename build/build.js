@@ -9,8 +9,7 @@ const buildForProd = env === "production";
 // Automatically exclude all node_modules from the bundled version
 import { nodeExternalsPlugin } from "esbuild-node-externals";
 
-esbuild
-  .build({
+const mainBuild = esbuild.build({
     entryPoints: ["./src/main.ts"],
     outfile: process.env.ESM_BUILD ? "dist/main.js" : "dist/main.cjs",
     bundle: true,
@@ -37,7 +36,23 @@ esbuild
         const __dirname = path.dirname(__filename);
         ` : ``,
     }
-  })
+  });
+
+// The Tailwind CSS v4 worker is loaded by path at runtime (see src/v4.ts),
+// so it is built as a standalone ES module for both the CJS and ESM builds
+const workerBuild = esbuild.build({
+    entryPoints: ["./src/worker.ts"],
+    outfile: "dist/worker.js",
+    bundle: true,
+    minify: buildForProd ? true : false,
+    platform: "node",
+    sourcemap: true,
+    target: "esnext",
+    format: "esm",
+    plugins: [nodeExternalsPlugin()],
+  });
+
+Promise.all([mainBuild, workerBuild])
   .then(() => {
     console.log("===========================================");
     if (buildForProd) {

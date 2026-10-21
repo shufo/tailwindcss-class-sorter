@@ -5,6 +5,7 @@ import loadConfig from "tailwindcss/loadConfig.js";
 import type { Config } from "tailwindcss/types/config";
 import escalade from "escalade/sync";
 import { IOption } from "./options";
+import { sortClassesV4 } from "./v4";
 import objectHash from "object-hash";
 import path from "path";
 import fs from "fs";
@@ -60,6 +61,11 @@ function getClassOrderPolyfill(classes, context) {
 }
 
 export function sortClasses(classStr: string, options: IOption = {}): string {
+    // Tailwind CSS v4 is configured with a CSS entry point instead of a JS config
+    if (options.tailwindConfigPath?.endsWith(".css")) {
+        return sortClassesV4(classStr, options.tailwindConfigPath);
+    }
+
     const tailwindConfigPath = escalade(__dirname, (dir, names) => {
         if (names.includes(__defaultConfig__)) {
             return __defaultConfig__;
